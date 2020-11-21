@@ -1,6 +1,5 @@
 package geekbrains;
 
-
 import java.util.Arrays;
 
 public class Main {
