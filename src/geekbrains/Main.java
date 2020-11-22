@@ -1,16 +1,16 @@
 package geekbrains;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        System.out.println("hw1");
 
 
-        }
-    public static void hello() {
+
+   /* public static void hello() {
         System.out.println("hello");
     }
 }
@@ -138,8 +138,51 @@ public class Main {
             }
             System.out.println(Arrays.toString(arr));
         }
+        */
+
+
+
     }
+
+    /* public static void guessTheNumber() {
+        byte a = (byte) (Math.random() * 9);
+        System.out.println("Угадай число от 0 до 9");
+        for (int i = 0; i < 3; i++) {
+            Scanner sc = new Scanner(System.in);
+            byte b = sc.nextByte();
+            if (b < a) {
+                System.out.println("Загаданное число больше");
+            } else if (b > a) {
+                System.out.println("Загаданное число меньше");
+            }
+            else {
+                System.out.println("Вы угадали");
+                break;
+            }
+        }
+        System.out.println("GAME OVER");
+        restart();
+
+    }
+    public static void restart() {
+        System.out.println("Хотите повторить игру?  1 - да.  0 - нет");
+        Scanner sc = new Scanner(System.in);
+        byte d = sc.nextByte();
+        if (d == 1) {
+            guessTheNumber();
+        }
+        else {
+            System.out.println("GAME OVER");
+        }
+
+    } */
 }
+
+
+
+
+
+
 
 
 
