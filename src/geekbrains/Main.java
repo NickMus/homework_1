@@ -140,8 +140,7 @@ public class Main {
         }
         */
 
-
-
+        guessAWord();
     }
 
     /* public static void guessTheNumber() {
@@ -176,7 +175,71 @@ public class Main {
         }
 
     } */
+
+
+    public static void guessAWord() {
+        int length;
+        String[] words = {"apple", "orange", "lemon", "banana", "apricot",
+                "avocado", "broccoli", "carrot", "cherry", "garlic",
+                "grape", "melon", "leak", "kiwi", "mango",
+                "mushroom", "nut", "olive", "pea", "peanut",
+                "pear", "pepper", "pineapple", "pumpkin", "potato"};
+
+
+             length =  words.length; //длинна массива
+
+             int a = (int) (Math.random() * length); //загадываем число
+        String word = words[a]; //загаданное слово = слову из номера ячейки массива
+        char[] gameVariant = word.toCharArray(); //загаданное слово в массив символов
+        System.out.println("Я загадал слово.Угадайте его");
+        for (int i = 0; ; i++) {
+            Scanner sc = new Scanner(System.in);
+          String playerWord = sc.nextLine();
+          char[] playerVariant = playerWord.toCharArray(); //введенное слово в массив символов
+
+
+            char[] mask = new char[gameVariant.length];
+            for (int j = 0; j < gameVariant.length; j++) {
+                mask[j] = '#';
+            }
+
+            for (int j = 0; j < gameVariant.length; j++) {
+                 for (int k = 0; k < playerVariant.length; k++) {
+
+                    if (gameVariant[j] == playerVariant[k]) {
+                        mask[j] = gameVariant[j];
+                    }
+
+
+                 }
+
+            }
+
+
+            if  (Arrays.equals(gameVariant, playerVariant)) {
+                System.out.println("Вы угадали");
+                break;
+            }
+            else {
+                System.out.println("Вы не угадали. Игра продолжается");
+                System.out.println(mask);
+
+
+            }
+
+        }
+
+    }
 }
+
+
+
+
+
+
+
+
+
 
 
 
