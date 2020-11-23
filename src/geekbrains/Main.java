@@ -143,7 +143,7 @@ public class Main {
         guessAWord();
     }
 
-    /* public static void guessTheNumber() {
+     public static void guessTheNumber() {
         byte a = (byte) (Math.random() * 9);
         System.out.println("Угадай число от 0 до 9");
         for (int i = 0; i < 3; i++) {
@@ -174,7 +174,7 @@ public class Main {
             System.out.println("GAME OVER");
         }
 
-    } */
+    }
 
 
     public static void guessAWord() {
