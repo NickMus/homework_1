@@ -1,11 +1,16 @@
 package geekbrains;
 
+<<<<<<< HEAD
+=======
+import java.util.Arrays;
+>>>>>>> develop
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
+<<<<<<< HEAD
         byte p = 1;
         short o = 2;
         int k = 3;
@@ -17,6 +22,13 @@ public class Main {
         String name = "Nikita";
 
 
+=======
+
+
+
+   /* public static void hello() {
+        System.out.println("hello");
+>>>>>>> develop
     }
 
 
@@ -75,9 +87,115 @@ public class Main {
         else {
             System.out.println("Not leap");
         }
+        */
+
+        guessAWord();
+    }
+
+     public static void guessTheNumber() {
+        byte a = (byte) (Math.random() * 9);
+        System.out.println("Угадай число от 0 до 9");
+        for (int i = 0; i < 3; i++) {
+            Scanner sc = new Scanner(System.in);
+            byte b = sc.nextByte();
+            if (b < a) {
+                System.out.println("Загаданное число больше");
+            } else if (b > a) {
+                System.out.println("Загаданное число меньше");
+            }
+            else {
+                System.out.println("Вы угадали");
+                break;
+            }
+        }
+        System.out.println("GAME OVER");
+        restart();
+
+    }
+    public static void restart() {
+        System.out.println("Хотите повторить игру?  1 - да.  0 - нет");
+        Scanner sc = new Scanner(System.in);
+        byte d = sc.nextByte();
+        if (d == 1) {
+            guessTheNumber();
+        }
+        else {
+            System.out.println("GAME OVER");
+        }
+
+    }
+
+
+    public static void guessAWord() {
+        int length;
+        String[] words = {"apple", "orange", "lemon", "banana", "apricot",
+                "avocado", "broccoli", "carrot", "cherry", "garlic",
+                "grape", "melon", "leak", "kiwi", "mango",
+                "mushroom", "nut", "olive", "pea", "peanut",
+                "pear", "pepper", "pineapple", "pumpkin", "potato"};
+
+
+             length =  words.length; //длинна массива
+
+             int a = (int) (Math.random() * length); //загадываем число
+        String word = words[a]; //загаданное слово = слову из номера ячейки массива
+        char[] gameVariant = word.toCharArray(); //загаданное слово в массив символов
+        System.out.println("Я загадал слово.Угадайте его");
+        for (int i = 0; ; i++) {
+            Scanner sc = new Scanner(System.in);
+          String playerWord = sc.nextLine();
+          char[] playerVariant = playerWord.toCharArray(); //введенное слово в массив символов
+
+
+            char[] mask = new char[gameVariant.length];
+            for (int j = 0; j < gameVariant.length; j++) {
+                mask[j] = '#';
+            }
+
+            for (int j = 0; j < gameVariant.length; j++) {
+                 for (int k = 0; k < playerVariant.length; k++) {
+
+                    if (gameVariant[j] == playerVariant[k]) {
+                        mask[j] = gameVariant[j];
+                    }
+
+
+                 }
+
+            }
+
+
+            if  (Arrays.equals(gameVariant, playerVariant)) {
+                System.out.println("Вы угадали");
+                break;
+            }
+            else {
+                System.out.println("Вы не угадали. Игра продолжается");
+                System.out.println(mask);
+
+
+            }
+
+        }
+
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
