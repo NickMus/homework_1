@@ -1,7 +1,5 @@
 package geekbrains;
 
-<<<<<<< HEAD
-=======
 import java.util.Arrays;
 >>>>>>> develop
 import java.util.Scanner;
@@ -10,16 +8,6 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-<<<<<<< HEAD
-        byte p = 1;
-        short o = 2;
-        int k = 3;
-        long g = 4L;
-        float f = 3.14f;
-        double j = 2.71;
-        char x;
-        boolean h;
-        String name = "Nikita";
 
 
 =======
@@ -69,30 +57,64 @@ public class Main {
     }
 
 
-    public static void Hello() {
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
-    }
+        public static boolean sum() {
+            boolean b = false;
+            int sum1 = 0;
+            int sum2 = 0;
+            int[] arr = {1, 2, 5, 9, 4, 13};
+            for (int j = 0; j < arr.length; j++) {
+                for (int i = 0; i <= j; i++) {
+                    sum1 = sum1 + arr[i];
+                }
+                for (int i = j + 1; i < arr.length; i++) {
+                    sum2 = sum2 + arr[i];
+                }
+                if (sum1 == sum2) {
+                    b=true;
+                    break;}
 
-    public static void isLeapOrNot() {
-        Scanner scan = new Scanner(System.in);
-        int year = scan.nextInt();
-        if (year % 4 == 0 && year % 100 != 0) {
-            System.out.println("Leap");
+                sum1 = 0;
+                sum2 = 0;
+            }
+
+            return b;
         }
-        else if (year % 400 == 0) {
-            System.out.println("Leap");
-        }
-        else {
-            System.out.println("Not leap");
+
+
+    }
+    public static void MoveMassive(int numb) {
+        int i , j;
+        if (numb > 0) {
+
+            numb = 2;
+            int[] arr = {1, 2, 3, 4, 5, 6};
+            for (i = 0; i < numb; i++) {
+                int a = arr[arr.length - 1];
+                for (j = arr.length - 1; j >= 1; j--) {
+                    arr[j] = arr[j - 1];
+                }
+                arr[0] = a;
+            }
+            System.out.println(Arrays.toString(arr));
+        } else {
+
+            numb = -3;
+            int plus = numb * (-1);
+            int[] arr = {1, 2, 3, 4, 5, 6};
+            for (i = 0; i < plus; i++) {
+                int a = arr[0];
+                for (j = 0; j <= arr.length - 2; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                arr[arr.length - 1] = a;
+            }
+            System.out.println(Arrays.toString(arr));
         }
         */
 
-        guessAWord();
     }
 
-     public static void guessTheNumber() {
+    /* public static void guessTheNumber() {
         byte a = (byte) (Math.random() * 9);
         System.out.println("Угадай число от 0 до 9");
         for (int i = 0; i < 3; i++) {
@@ -179,7 +201,6 @@ public class Main {
         }
 
     }
-
 }
 
 
