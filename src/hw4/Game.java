@@ -12,6 +12,7 @@ import java.util.Scanner;
         public static char[][] map;
         public static Scanner sc = new Scanner(System.in);
         public static Random rand = new Random();
+        static int e = 0;
 
 
         public static void main(String[] args) {
@@ -30,9 +31,7 @@ import java.util.Scanner;
                 }
 
 
-                if (blockHuman()) {
-                    blockHuman();
-                } else {
+                if (!blockHuman()) {
                     aiTurn();
                 }
 
@@ -191,7 +190,7 @@ import java.util.Scanner;
                         checkWin(DOT_X);
                         if (checkWin(DOT_X)) {
                             map[i][j] = DOT_O;
-                            e++;
+                            return true;
                         } else {
                             map[i][j] = DOT_EMPTY;
                         }
@@ -200,8 +199,8 @@ import java.util.Scanner;
                 }
             }
 
-                return e > 0;
 
+            return false;
             }
 
         }
