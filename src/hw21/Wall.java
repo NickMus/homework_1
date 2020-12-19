@@ -1,8 +1,9 @@
 package hw21;
 
-public class Wall implements Overcome {
+public class Wall implements  Overcomable {
 
     private double height;
+
 
 //    public Wall(double height) {
 //        this.height = height;
@@ -17,12 +18,15 @@ public class Wall implements Overcome {
         return height;
     }
 
-    @Override
-    public void act() {
-        
 
+    @Override
+    public void act(Actionable actionable) {
+        actionable.jump();
     }
 
-
 }
+
+
+
+
 

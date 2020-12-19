@@ -1,6 +1,6 @@
 package hw21;
 
-public class Cat implements Action, Overcome {
+public class Cat implements Actionable {
 
     private String name;
     private double maxJumpHeight;

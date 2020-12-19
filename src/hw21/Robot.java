@@ -1,6 +1,6 @@
 package hw21;
 
-public class Robot implements Action, Overcome {
+public class Robot implements Actionable {
 
     private String name;
    private double maxJumpHeight;
@@ -42,7 +42,10 @@ public class Robot implements Action, Overcome {
     }
 
     Wall wall = new Wall();
-    @Override
+
+
+
+        @Override
     public void act() {
         wall.getHeight();
         if (maxJumpHeight > wall.getHeight()) {

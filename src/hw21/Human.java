@@ -1,10 +1,12 @@
 package hw21;
 
-public class Human implements Action, Overcome {
+
+public class Human implements Actionable {
 
     private String name;
     private double maxJumpHeight;
     private int maxRunningDist;
+
 
     public void setName(String name) {
         this.name = name;
@@ -40,15 +42,16 @@ public class Human implements Action, Overcome {
 
     }
 
-    Wall wall = new Wall();
+
+    
+
 
     @Override
     public void act() {
-        wall.getHeight();
-        if (maxJumpHeight > wall.getHeight()) {
-            System.out.println(getName() + " перепрыгнул стену");
-        }else{
-            System.out.println("Стена слишком высокая");
-        }
+        getMaxJumpHeight();
+        getName();
+        getMaxRunningDist();
+
+
     }
 }
