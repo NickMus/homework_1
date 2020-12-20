@@ -21,7 +21,7 @@ public class Wall implements  Overcomable {
 
     @Override
     public void act(Actionable actionable) {
-        actionable.jump();
+        actionable.jump(height);
     }
 
 }

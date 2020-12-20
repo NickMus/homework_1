@@ -8,8 +8,12 @@ public class Treadmill implements Overcomable {
         this.distance = distance;
     }
 
+    public double getDistance() {
+        return distance;
+    }
+
     @Override
     public void act(Actionable actionable) {
-        actionable.run();
+        actionable.run(distance);
     }
 }

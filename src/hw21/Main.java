@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         Wall wall = new Wall();
-        wall.setHeight(1.0);
+        wall.setHeight(1.4);
+        wall.getHeight();
 
         Treadmill treadmill = new Treadmill();
         treadmill.setDistance(5.0);
@@ -14,52 +15,60 @@ public class Main {
         human.setName("Mike");
         human.setMaxJumpHeight(1.5);
         human.setMaxRunningDist(40);
+        human.setOnDistance(true);
 
 
-        wall.act(human);
-        human.jump();
-        human.run();
+//        wall.act(human);
+//        human.jump();
+//        human.run();
 
 
         Cat cat = new Cat();
         cat.setName("Barsik");
         cat.setMaxJumpHeight(1.2);
         cat.setMaxRunningDist(3);
+        cat.setOnDistance(true);
 
-        wall.act(cat);
-        cat.run();
-        cat.jump();
+//        wall.act(cat);
+//        cat.run();
+//        cat.jump();
 
 
         Robot robot = new Robot();
         robot.setName("WallE");
         robot.setMaxJumpHeight(0.15);
         robot.setMaxRunningDist(23);
+        robot.setOnDistance(true);
 
 
-
-        wall.act(robot);
-        robot.run();
-        robot.jump();
-
+//        wall.act(robot);
+//        robot.run();
+//        robot.jump();
 
 
-        Object[] players = new Object[3];
+        Actionable[] players = new Actionable[3];
         players[0] = human;
         players[1] = cat;
         players[2] = robot;
 
-        Object[] overcome = new Object[2];
+        Overcomable[] overcome = new Overcomable[2];
         overcome[0] = wall;
         overcome[1] = treadmill;
 
 
-        for (int i = 0; i < players.length; i++) {
-            for (int j = 0; j < overcome.length; j++) {
+        for (Actionable player : players) {
+            for (Overcomable overcomable : overcome) {
+                overcomable.act(player);
+                if (!player.onDistance()) {
+                    break;
+                }
 
             }
+
+
         }
 
 
     }
 }
+
